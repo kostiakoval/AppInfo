@@ -10,6 +10,7 @@
 		B58CABB71AAA55CF00BC2F8D /* AppInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B58CABB61AAA55CF00BC2F8D /* AppInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B58CABBD1AAA55D000BC2F8D /* AppInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58CABB11AAA55CF00BC2F8D /* AppInfo.framework */; };
 		B58CABC41AAA55D000BC2F8D /* AppInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CABC31AAA55D000BC2F8D /* AppInfoTests.swift */; };
+		B58CABCE1AAA586E00BC2F8D /* SweftyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CABCD1AAA586E00BC2F8D /* SweftyInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		B58CABBC1AAA55D000BC2F8D /* AppInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58CABC21AAA55D000BC2F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B58CABC31AAA55D000BC2F8D /* AppInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoTests.swift; sourceTree = "<group>"; };
+		B58CABCD1AAA586E00BC2F8D /* SweftyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweftyInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		B58CABB31AAA55CF00BC2F8D /* AppInfo */ = {
 			isa = PBXGroup;
 			children = (
+				B58CABCF1AAA587B00BC2F8D /* Source */,
 				B58CABB61AAA55CF00BC2F8D /* AppInfo.h */,
 				B58CABB41AAA55CF00BC2F8D /* Supporting Files */,
 			);
@@ -100,6 +103,14 @@
 				B58CABC21AAA55D000BC2F8D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B58CABCF1AAA587B00BC2F8D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B58CABCD1AAA586E00BC2F8D /* SweftyInfo.swift */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58CABCE1AAA586E00BC2F8D /* SweftyInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +335,7 @@
 		B58CABC81AAA55D000BC2F8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,12 +345,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B58CABC91AAA55D000BC2F8D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -399,6 +414,7 @@
 				B58CABC91AAA55D000BC2F8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B58CABCA1AAA55D000BC2F8D /* Build configuration list for PBXNativeTarget "AppInfoTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +423,7 @@
 				B58CABCC1AAA55D000BC2F8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
