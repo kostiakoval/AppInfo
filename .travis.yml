@@ -1,0 +1,14 @@
+language: objective-c
+osx_image: xcode611
+podfile: Example/Podfile
+
+cache: cocoapods
+
+before_install:
+- gem install cocoapods --pre
+- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+
+script:
+- set -o pipefail
+- xcodebuild test -workspace Example/Demo.xcworkspace -scheme Demo -sdk iphonesimulator | xcpretty -c
+- pod lib lint --quick
