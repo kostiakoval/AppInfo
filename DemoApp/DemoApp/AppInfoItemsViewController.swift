@@ -40,54 +40,28 @@ class AppInfoItemsViewController: UITableViewController {
 
   private func loadItems() {
 
+    items.append(AppInfoItem(name: "CFBundleIdentifier", value:AppInfo.CFBundleIdentifier))
     items.append(AppInfoItem(name: "DTPlatformName", value: AppInfo.DTPlatformName))
-    items.append(AppInfoItem(name: "CFBundleIdentifier", value: AppInfo.CFBundleIdentifier))
 
+    items.append(AppInfoItem(name: "UIMainStoryboardFile", value:AppInfo.UIMainStoryboardFile))
+    items.append(AppInfoItem(name: "CFBundleVersion", value:"\(AppInfo.CFBundleVersion!)"))
+    items.append(AppInfoItem(name: "CFBundleSignature", value:AppInfo.CFBundleSignature))
+    items.append(AppInfoItem(name: "CFBundleExecutable", value:AppInfo.CFBundleExecutable))
+//    items.append(AppInfoItem(name: "LSRequiresIPhoneOS", value:AppInfo.LSRequiresIPhoneOS))
+    items.append(AppInfoItem(name: "CFBundleName", value:AppInfo.CFBundleName))
+    items.append(AppInfoItem(name: "UILaunchStoryboardName", value:AppInfo.UILaunchStoryboardName))
+  //  items.append(AppInfoItem(name: "CFBundleSupportedPlatforms", value:AppInfo.CFBundleSupportedPlatforms))
+    items.append(AppInfoItem(name: "CFBundlePackageType", value:AppInfo.CFBundlePackageType))
+    //items.append(AppInfoItem(name: "CFBundleNumericVersion", value:AppInfo.CFBundleNumericVersion))
+    items.append(AppInfoItem(name: "CFBundleInfoDictionaryVersion", value:AppInfo.CFBundleInfoDictionaryVersion))
+    //items.append(AppInfoItem(name: "UIRequiredDeviceCapabilities", value:AppInfo.UIRequiredDeviceCapabilities))
+    //items.append(AppInfoItem(name: "UISupportedInterfaceOrientations", value:AppInfo.UISupportedInterfaceOrientations))
+    items.append(AppInfoItem(name: "CFBundleInfoPlistURL", value:AppInfo.CFBundleInfoPlistURL))
+    items.append(AppInfoItem(name: "CFBundleDevelopmentRegion", value:AppInfo.CFBundleDevelopmentRegion))
+    items.append(AppInfoItem(name: "DTSDKName", value:AppInfo.DTSDKName))
+    //items.append(AppInfoItem(name: "UIDeviceFamily", value:AppInfo.UIDeviceFamily))
+    items.append(AppInfoItem(name: "CFBundleShortVersionString", value:AppInfo.CFBundleShortVersionString))
   }
 
-  /*
-  // Override to support conditional editing of the table view.
-  override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-  // Return NO if you do not want the specified item to be editable.
-  return true
-  }
-  */
-
-  /*
-  // Override to support editing the table view.
-  override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-  if editingStyle == .Delete {
-  // Delete the row from the data source
-  tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-  } else if editingStyle == .Insert {
-  // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-  }
-  }
-  */
-
-  /*
-  // Override to support rearranging the table view.
-  override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-  }
-  */
-
-  /*
-  // Override to support conditional rearranging of the table view.
-  override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-  // Return NO if you do not want the item to be re-orderable.
-  return true
-  }
-  */
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using [segue destinationViewController].
-  // Pass the selected object to the new view controller.
-  }
-  */
 
 }
