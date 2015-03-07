@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B584C3AA1AAB0EE8002ED36F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B584C3A91AAB0EE8002ED36F /* Foundation.framework */; };
 		B58CABB71AAA55CF00BC2F8D /* AppInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B58CABB61AAA55CF00BC2F8D /* AppInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B58CABBD1AAA55D000BC2F8D /* AppInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58CABB11AAA55CF00BC2F8D /* AppInfo.framework */; };
 		B58CABC41AAA55D000BC2F8D /* AppInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CABC31AAA55D000BC2F8D /* AppInfoTests.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B584C3A91AAB0EE8002ED36F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B58CABB11AAA55CF00BC2F8D /* AppInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58CABB51AAA55CF00BC2F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B58CABB61AAA55CF00BC2F8D /* AppInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B584C3AA1AAB0EE8002ED36F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +58,7 @@
 		B58CABA71AAA55CF00BC2F8D = {
 			isa = PBXGroup;
 			children = (
+				B584C3A91AAB0EE8002ED36F /* Foundation.framework */,
 				B58CABB31AAA55CF00BC2F8D /* AppInfo */,
 				B58CABC01AAA55D000BC2F8D /* AppInfoTests */,
 				B58CABB21AAA55CF00BC2F8D /* Products */,
@@ -280,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -322,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
