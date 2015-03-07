@@ -30,92 +30,135 @@ private func array<T>(object: AnyObject?) -> Array<T>? {
 }
 
 public struct AppInfo {
-  private static let bundleInfo = NSBundle.mainBundle().infoDictionary as! Dictionary<String, AnyObject>
+  private let bundleInfo = NSBundle.mainBundle().infoDictionary as! Dictionary<String, AnyObject>
 
-  static var CFBundleIdentifier: String? {
+  public var CFBundleIdentifier: String? {
     return bundleInfo["CFBundleIdentifier"] >> string
   }
 
-  public static var DTPlatformName: String? {
+  public var DTPlatformName: String? {
     return bundleInfo["DTPlatformName"] >> string
   }
 
-  public static var UIMainStoryboardFile: String? {
+  public var UIMainStoryboardFile: String? {
     return bundleInfo["UIMainStoryboardFile"] >> string
   }
-  public static var CFBundleVersion: Int? {
+
+  public var CFBundleVersion: Int? {
     return bundleInfo["CFBundleVersion"] >> int
   }
 
-  public static var CFBundleSignature: String? {
+  public var CFBundleSignature: String? {
     return bundleInfo["CFBundleSignature"] >> string
   }
 
-  public static var CFBundleExecutable: String? {
+  public var CFBundleExecutable: String? {
     return bundleInfo["CFBundleExecutable"] >> string
   }
 
-  public static var LSRequiresIPhoneOS: Int? {
+  public var LSRequiresIPhoneOS: Int? {
     return bundleInfo["LSRequiresIPhoneOS"] >> int
   }
 
-  public static var CFBundleName: String? {
+  public var CFBundleName: String? {
     return bundleInfo["CFBundleName"] >> string
   }
 
-  public static var UILaunchStoryboardName: String? {
+  public var UILaunchStoryboardName: String? {
     return bundleInfo["UILaunchStoryboardName"] >> string
   }
 
-  public static var CFBundleSupportedPlatforms: Array<String>? {
+  public var CFBundleSupportedPlatforms: Array<String>? {
     return bundleInfo["CFBundleSupportedPlatforms"] >> array
   }
 
-  public static var CFBundlePackageType: String? {
+  public var CFBundlePackageType: String? {
     return bundleInfo["CFBundlePackageType"] >> string
   }
 
-  public static var CFBundleNumericVersion: Int? {
+  public var CFBundleNumericVersion: Int? {
     return bundleInfo["CFBundleNumericVersion"] >> int
   }
 
-  public static var CFBundleInfoDictionaryVersion: String? {
+  public var CFBundleInfoDictionaryVersion: String? {
     return bundleInfo["CFBundleInfoDictionaryVersion"] >> string
   }
 
-  public static var UIRequiredDeviceCapabilities: Array<String>? {
+  public var UIRequiredDeviceCapabilities: Array<String>? {
     return bundleInfo["UIRequiredDeviceCapabilities"] >> array
   }
 
-  public static var UISupportedInterfaceOrientations: Array<String>? {
+  public var UISupportedInterfaceOrientations: Array<String>? {
     return bundleInfo["UISupportedInterfaceOrientations"] >> array
   }
 
-  public static var CFBundleInfoPlistURL: String? {
+  public var CFBundleInfoPlistURL: String? {
     return bundleInfo["CFBundleInfoPlistURL"] >> string
   }
 
-  public static var CFBundleDevelopmentRegion: String? {
+  public var CFBundleDevelopmentRegion: String? {
     return bundleInfo["CFBundleDevelopmentRegion"] >> string
   }
 
-  public static var DTSDKName: String? {
+  public var DTSDKName: String? {
     return bundleInfo["DTSDKName"] >> string
   }
 
-  public static var UIDeviceFamily: Array<Int>? {
+  public var UIDeviceFamily: Array<Int>? {
     return bundleInfo["UIDeviceFamily"] >> array
   }
 
-  public static var CFBundleShortVersionString: String? {
+  public var CFBundleShortVersionString: String? {
     return bundleInfo["CFBundleShortVersionString"] >> string
   }
 
-  /*static var <#name#>: <#Type#> {
+  /* var <#name#>: <#Type#> {
   return bundleInfo[<#name#>] >>
   } */
 
-  public static func info() -> Dictionary<NSObject, AnyObject>? {
+  public func info() -> Dictionary<NSObject, AnyObject>? {
     return bundleInfo
+  }
+}
+
+//MARK: - Runtime Info
+
+public extension AppInfo {
+
+  public var names: Array<String> {
+    return RuntimeHelp.names(AppInfo)
+  }
+
+  public var items: Array<(key: String, value:Any)> {
+    return RuntimeHelp.items(AppInfo)
+  }
+}
+
+struct RuntimeHelp {
+
+   func names <T>(instance: T) -> Array<String> {
+
+    var names = [String]()
+    let mirror = reflect(instance)
+
+    for i in 0 ..< mirror.count {
+      let (childKey, _ ) = mirror[i]
+      names.append(childKey)
+    }
+
+    return names
+  }
+
+   func items <T>(instance: T) -> Array<(key: String, value:Any)> {
+
+    var items = Array<(key: String, value:Any)>()
+    let mirror = reflect(instance)
+
+    for i in 0 ..< mirror.count {
+      let (childKey, type) = mirror[i]
+      items.append((key:childKey, value:type.value))
+    }
+
+    return items
   }
 }
