@@ -8,66 +8,76 @@
 
 import Foundation
 
-func to_string(object: AnyObject?) -> String? {
+
+
+
+infix operator >> { associativity right precedence 90 }
+func >> <T, R>(x: T, f: (T) -> R) -> R {
+  return f(x)
+}
+
+private func string(object: AnyObject?) -> String? {
   return object as? String
 }
 
+private func int(object: AnyObject?) -> Int? {
+  return object as? Int
+}
 
-public struct SweftyInfo {
 
+public struct AppInfo {
   static let bundleInfo = NSBundle.mainBundle().infoDictionary as! Dictionary<String, AnyObject>
 
-  static var CFBundleIdentifier: String {
-    return bundleInfo["CFBundleIdentifier"] as! String
+  static var CFBundleIdentifier: String? {
+    return bundleInfo["CFBundleIdentifier"] >> string
   }
 
-  static var DTPlatformName: String? {
-   return to_string(bundleInfo["DTPlatformName"])
+  public static var DTPlatformName: String? {
+   return bundleInfo["DTPlatformName"] >> string
   }
 
- /* static var UIMainStoryboardFile: String {
-    return bundle.infoDictionary[<#name#>]
+  static var UIMainStoryboardFile: String? {
+    return bundleInfo["UIMainStoryboardFile"] >> string
   }
-  static var CFBundleVersion: Int {
-  return bundle.infoDictionary[<#name#>]
-  }
-
-  static var CFBundleSignature: <#Type#> {
-  return bundle.infoDictionary[<#name#>]
+  static var CFBundleVersion: Int? {
+    return bundleInfo["CFBundleVersion"] >> int
   }
 
-  static var CFBundleIdentifier: <#Type#> {
-  return bundle.infoDictionary[<#name#>]
-
+  static var CFBundleSignature: String? {
+    return bundleInfo["CFBundleSignature"] >> string
   }
 
-  static var CFBundleExecutable: String {
-  return bundle.infoDictionary["CFBundleExecutable"]
+//  static var CFBundleIdentifier: String? {
+//    return bundleInfo["CFBundleIdentifier"] >> string
+//  }
+
+ /* static var CFBundleExecutable: String? {
+  return bundleInfo["CFBundleExecutable"]
   }
   static var LSRequiresIPhoneOS: <#Type#> {
-  return bundle.infoDictionary[<#name#>]
+  return bundleInfo[<#name#>]
   }
   static var CFBundleName: <#Type#> {
-  return bundle.infoDictionary[<#name#>]
+  return bundleInfo[<#name#>]
   }
   static var UILaunchStoryboardName: <#Type#> {
-  return bundle.infoDictionary[<#name#>]
+  return bundleInfo[<#name#>]
   }
   static var CFBundleSupportedPlatforms: <#Type#> {
-  return bundle.infoDictionary[<#name#>]
+  return bundleInfo[<#name#>]
   }
   static var CFBundlePackageType: <#Type#> {
-  return bundle.infoDictionary[<#name#>]
+  return bundleInfo[<#name#>]
   }
   static var CFBundleNumericVersion: <#Type#> {
-  return bundle.infoDictionary[<#name#>]
+  return bundleInfo[<#name#>]
   }
-  static var CFBundleInfoDictionaryVersion: String {
-  return bundleInfo["CFBundleInfoDictionaryVersion"] as! String
+  static var CFBundleInfoDictionaryVersion: String? {
+  return bundleInfo["CFBundleInfoDictionaryVersion"] >> string
   }
-  static var UIRequiredDeviceCapabilities: <#Type#> {
-  return bundle.infoDictionary["UIRequiredDeviceCapabilities"]
-
+  static var UIRequiredDeviceCapabilities: Array<String>? {
+    return bundle.infoDictionary["UIRequiredDeviceCapabilities"]
+  }
 
   static var UISupportedInterfaceOrientations: <#Type#> {
   return bundle.infoDictionary["UISupportedInterfaceOrientations"]
