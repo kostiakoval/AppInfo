@@ -8,8 +8,7 @@
 
 import Foundation
 
-
-
+//MARK: - Convertors
 
 infix operator >> { associativity right precedence 90 }
 func >> <T, R>(x: T, f: (T) -> R) -> R {
@@ -24,99 +23,99 @@ private func int(object: AnyObject?) -> Int? {
   return object as? Int
 }
 
-
 private func array<T>(object: AnyObject?) -> Array<T>? {
   return object as? Array
 }
 
 public struct AppInfo {
-  private let bundleInfo = NSBundle.mainBundle().infoDictionary as! Dictionary<String, AnyObject>
+  private static let bundleInfo = NSBundle.mainBundle().infoDictionary as! Dictionary<String, AnyObject>
 
-  public var CFBundleIdentifier: String? {
+  public static var CFBundleIdentifier: String? {
     return bundleInfo["CFBundleIdentifier"] >> string
   }
 
-  public var DTPlatformName: String? {
+  public static var DTPlatformName: String? {
     return bundleInfo["DTPlatformName"] >> string
   }
 
-  public var UIMainStoryboardFile: String? {
+  public static var UIMainStoryboardFile: String? {
     return bundleInfo["UIMainStoryboardFile"] >> string
   }
 
-  public var CFBundleVersion: Int? {
+  public static var CFBundleVersion: Int? {
     return bundleInfo["CFBundleVersion"] >> int
   }
 
-  public var CFBundleSignature: String? {
+  public static var CFBundleSignature: String? {
     return bundleInfo["CFBundleSignature"] >> string
   }
 
-  public var CFBundleExecutable: String? {
+  public static var CFBundleExecutable: String? {
     return bundleInfo["CFBundleExecutable"] >> string
   }
 
-  public var LSRequiresIPhoneOS: Int? {
+  public static var LSRequiresIPhoneOS: Int? {
     return bundleInfo["LSRequiresIPhoneOS"] >> int
   }
 
-  public var CFBundleName: String? {
+  public static var CFBundleName: String? {
     return bundleInfo["CFBundleName"] >> string
   }
 
-  public var UILaunchStoryboardName: String? {
+  public static var UILaunchStoryboardName: String? {
     return bundleInfo["UILaunchStoryboardName"] >> string
   }
 
-  public var CFBundleSupportedPlatforms: Array<String>? {
+  public static var CFBundleSupportedPlatforms: Array<String>? {
     return bundleInfo["CFBundleSupportedPlatforms"] >> array
   }
 
-  public var CFBundlePackageType: String? {
+  public static var CFBundlePackageType: String? {
     return bundleInfo["CFBundlePackageType"] >> string
   }
 
-  public var CFBundleNumericVersion: Int? {
+  public static var CFBundleNumericVersion: Int? {
     return bundleInfo["CFBundleNumericVersion"] >> int
   }
 
-  public var CFBundleInfoDictionaryVersion: String? {
+  public static var CFBundleInfoDictionaryVersion: String? {
     return bundleInfo["CFBundleInfoDictionaryVersion"] >> string
   }
 
-  public var UIRequiredDeviceCapabilities: Array<String>? {
+  public static var UIRequiredDeviceCapabilities: Array<String>? {
     return bundleInfo["UIRequiredDeviceCapabilities"] >> array
   }
 
-  public var UISupportedInterfaceOrientations: Array<String>? {
+  public static var UISupportedInterfaceOrientations: Array<String>? {
     return bundleInfo["UISupportedInterfaceOrientations"] >> array
   }
 
-  public var CFBundleInfoPlistURL: String? {
+  public static var CFBundleInfoPlistURL: String? {
     return bundleInfo["CFBundleInfoPlistURL"] >> string
   }
 
-  public var CFBundleDevelopmentRegion: String? {
+  public static var CFBundleDevelopmentRegion: String? {
     return bundleInfo["CFBundleDevelopmentRegion"] >> string
   }
 
-  public var DTSDKName: String? {
+  public static var DTSDKName: String? {
     return bundleInfo["DTSDKName"] >> string
   }
 
-  public var UIDeviceFamily: Array<Int>? {
+  public static var UIDeviceFamily: Array<Int>? {
     return bundleInfo["UIDeviceFamily"] >> array
   }
 
-  public var CFBundleShortVersionString: String? {
+  public static var CFBundleShortVersionString: String? {
     return bundleInfo["CFBundleShortVersionString"] >> string
   }
 
   /* var <#name#>: <#Type#> {
   return bundleInfo[<#name#>] >>
-  } */
+  }*/
 
-  public func info() -> Dictionary<NSObject, AnyObject>? {
+
+  public static func info() -> Dictionary<NSObject, AnyObject> {
     return bundleInfo
   }
 }
@@ -126,17 +125,17 @@ public struct AppInfo {
 public extension AppInfo {
 
   public var names: Array<String> {
-    return RuntimeHelp.names(AppInfo)
+    return RuntimeHelp.names(self)
   }
 
   public var items: Array<(key: String, value:Any)> {
-    return RuntimeHelp.items(AppInfo)
+    return RuntimeHelp.items(self)
   }
 }
 
 struct RuntimeHelp {
 
-   func names <T>(instance: T) -> Array<String> {
+  static func names <T>(instance: T) -> Array<String> {
 
     var names = [String]()
     let mirror = reflect(instance)
@@ -149,7 +148,7 @@ struct RuntimeHelp {
     return names
   }
 
-   func items <T>(instance: T) -> Array<(key: String, value:Any)> {
+  static func items <T>(instance: T) -> Array<(key: String, value:Any)> {
 
     var items = Array<(key: String, value:Any)>()
     let mirror = reflect(instance)
