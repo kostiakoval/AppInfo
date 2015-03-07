@@ -25,6 +25,10 @@ private func int(object: AnyObject?) -> Int? {
 }
 
 
+private func array<T>(object: AnyObject?) -> Array<T>? {
+  return object as? Array
+}
+
 public struct AppInfo {
   static let bundleInfo = NSBundle.mainBundle().infoDictionary as! Dictionary<String, AnyObject>
 
@@ -51,56 +55,62 @@ public struct AppInfo {
 //    return bundleInfo["CFBundleIdentifier"] >> string
 //  }
 
- /* static var CFBundleExecutable: String? {
-  return bundleInfo["CFBundleExecutable"]
+  static var CFBundleExecutable: String? {
+    return bundleInfo["CFBundleExecutable"] >> string
   }
-  static var LSRequiresIPhoneOS: <#Type#> {
-  return bundleInfo[<#name#>]
+  static var LSRequiresIPhoneOS: Int? {
+    return bundleInfo["LSRequiresIPhoneOS"] >> int
   }
-  static var CFBundleName: <#Type#> {
-  return bundleInfo[<#name#>]
+
+  static var CFBundleName: String? {
+    return bundleInfo["CFBundleName"] >> string
   }
-  static var UILaunchStoryboardName: <#Type#> {
-  return bundleInfo[<#name#>]
+
+  static var UILaunchStoryboardName: String? {
+    return bundleInfo["UILaunchStoryboardName"] >> string
   }
-  static var CFBundleSupportedPlatforms: <#Type#> {
-  return bundleInfo[<#name#>]
+
+  static var CFBundleSupportedPlatforms: Array<String>? {
+    return bundleInfo["CFBundleSupportedPlatforms"] >> array
   }
-  static var CFBundlePackageType: <#Type#> {
-  return bundleInfo[<#name#>]
+  static var CFBundlePackageType: String? {
+    return bundleInfo["CFBundlePackageType"] >> string
   }
-  static var CFBundleNumericVersion: <#Type#> {
-  return bundleInfo[<#name#>]
+  static var CFBundleNumericVersion: Int? {
+    return bundleInfo["CFBundleNumericVersion"] >> int
   }
+
   static var CFBundleInfoDictionaryVersion: String? {
-  return bundleInfo["CFBundleInfoDictionaryVersion"] >> string
+    return bundleInfo["CFBundleInfoDictionaryVersion"] >> string
   }
+
   static var UIRequiredDeviceCapabilities: Array<String>? {
-    return bundle.infoDictionary["UIRequiredDeviceCapabilities"]
+    return bundleInfo["UIRequiredDeviceCapabilities"] >> array
   }
 
-  static var UISupportedInterfaceOrientations: <#Type#> {
-  return bundle.infoDictionary["UISupportedInterfaceOrientations"]
+  static var UISupportedInterfaceOrientations: Array<String>? {
+  return bundleInfo["UISupportedInterfaceOrientations"] >> array
   }
 
-  static var CFBundleInfoPlistURL: <#Type#> {
-  return bundle.infoDictionary["CFBundleInfoPlistURL"]
+  static var CFBundleInfoPlistURL: String? {
+  return bundleInfo["CFBundleInfoPlistURL"] >> string
   }
 
-  static var CFBundleDevelopmentRegion: String {
-  return bundle.infoDictionary["CFBundleDevelopmentRegion"]
+  static var CFBundleDevelopmentRegion: String? {
+    return bundleInfo["CFBundleDevelopmentRegion"] >> string
   }
-  static var DTSDKName: <#Type#> {
-  return bundle.infoDictionary["DTSDKName"]
+  static var DTSDKName: String? {
+  return bundleInfo["DTSDKName"] >> string
   }
-  static var UIDeviceFamily: <#Type#> {
-  return bundle.infoDictionary["UIDeviceFamily"]
+  static var UIDeviceFamily: Array<Int>? {
+  return bundleInfo["UIDeviceFamily"] >> array
   }
-  static var <#name#>: <#Type#> {
-  return bundle.infoDictionary[<#name#>]
+  static var CFBundleShortVersionString: String? {
+    return bundleInfo["CFBundleShortVersionString"] >> string
   }
-  static var <#name#>: <#Type#> {
-  return bundle.infoDictionary[<#name#>]
+
+  /*static var <#name#>: <#Type#> {
+    return bundleInfo[<#name#>] >>
   } */
 
   public static func info() -> Dictionary<NSObject, AnyObject>? {
