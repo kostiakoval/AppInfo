@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var a: NSDictionary = SweftyInfo.info() as! NSDictionary
 
+
     println(a)
     debugPrintln(a)
 

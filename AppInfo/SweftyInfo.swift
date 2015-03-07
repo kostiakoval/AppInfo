@@ -48,14 +48,10 @@ public extension NSUserDefaults {
   }
 }
 
-func string(object: AnyObject) -> String? {
+func to_string(object: AnyObject?) -> String? {
   return object as? String
 }
 
-infix operator ?= {
-  associativity right
-  precedence 90
-}
 
 public struct SweftyInfo {
 
@@ -66,7 +62,7 @@ public struct SweftyInfo {
   }
 
   static var DTPlatformName: String? {
-    bundleInfo["DTPlatformName"]
+   return to_string(bundleInfo["DTPlatformName"])
   }
 
  /* static var UIMainStoryboardFile: String {
