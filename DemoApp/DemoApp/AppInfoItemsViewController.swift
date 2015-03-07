@@ -39,7 +39,10 @@ class AppInfoItemsViewController: UITableViewController {
   }
 
   private func loadItems() {
+
     items.append(AppInfoItem(name: "DTPlatformName", value: AppInfo.DTPlatformName))
+    items.append(AppInfoItem(name: "CFBundleIdentifier", value: AppInfo.CFBundleIdentifier))
+
   }
 
   /*

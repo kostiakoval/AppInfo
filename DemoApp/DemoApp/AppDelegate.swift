@@ -15,18 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-    var a: NSDictionary = AppInfo.info()! as NSDictionary
-    let name = AppInfo.DTPlatformName
-
-    println(a)
-    debugPrintln(a)
-
-    println(a.allKeys)
-    println(a.allValues)
-
-   // println(@"%s \n%@", __FUNCTION__, [[[NSBundle mainBundle] infoDictionary] allKeys]);
-
     return true
   }
 }
