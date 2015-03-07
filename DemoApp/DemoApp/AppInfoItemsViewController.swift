@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import AppInfo
 
 struct AppInfoItem {
   let name: String
-  let value: String
+  let value: String?
 }
 
 class AppInfoItemsViewController: UITableViewController {
@@ -19,18 +20,17 @@ class AppInfoItemsViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    loadItems()
   }
-
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return items.count
   }
 
-
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
     let cell = tableView.dequeueReusableCellWithIdentifier("AppInfoItemCell", forIndexPath: indexPath) as!  UITableViewCell
-    
+
     let item = items[indexPath.row]
     cell.textLabel?.text = item.name
     cell.detailTextLabel?.text = item.value
@@ -38,6 +38,9 @@ class AppInfoItemsViewController: UITableViewController {
     return cell
   }
 
+  private func loadItems() {
+    items.append(AppInfoItem(name: "DTPlatformName", value: AppInfo.DTPlatformName))
+  }
 
   /*
   // Override to support conditional editing of the table view.
