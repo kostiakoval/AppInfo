@@ -19,6 +19,10 @@ private func string(object: AnyObject?) -> String? {
   return object as? String
 }
 
+private func stringToInt(object: AnyObject?) -> Int? {
+  return (object as? String)?.toInt()
+}
+
 private func int(object: AnyObject?) -> Int? {
   return object as? Int
 }
@@ -43,7 +47,7 @@ public struct AppInfo {
   }
 
   public static var CFBundleVersion: Int? {
-    return bundleInfo["CFBundleVersion"] >> int
+    return bundleInfo["CFBundleVersion"] >> stringToInt
   }
 
   public static var CFBundleSignature: String? {
@@ -108,56 +112,5 @@ public struct AppInfo {
 
   public static var CFBundleShortVersionString: String? {
     return bundleInfo["CFBundleShortVersionString"] >> string
-  }
-
-  /* var <#name#>: <#Type#> {
-  return bundleInfo[<#name#>] >>
-  }*/
-
-
-  public static func info() -> Dictionary<NSObject, AnyObject> {
-    return bundleInfo
-  }
-}
-
-//MARK: - Runtime Info
-
-public extension AppInfo {
-
-  public var names: Array<String> {
-    return RuntimeHelp.names(self)
-  }
-
-  public var items: Array<(key: String, value:Any)> {
-    return RuntimeHelp.items(self)
-  }
-}
-
-struct RuntimeHelp {
-
-  static func names <T>(instance: T) -> Array<String> {
-
-    var names = [String]()
-    let mirror = reflect(instance)
-
-    for i in 0 ..< mirror.count {
-      let (childKey, _ ) = mirror[i]
-      names.append(childKey)
-    }
-
-    return names
-  }
-
-  static func items <T>(instance: T) -> Array<(key: String, value:Any)> {
-
-    var items = Array<(key: String, value:Any)>()
-    let mirror = reflect(instance)
-
-    for i in 0 ..< mirror.count {
-      let (childKey, type) = mirror[i]
-      items.append((key:childKey, value:type.value))
-    }
-
-    return items
   }
 }
