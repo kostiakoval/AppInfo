@@ -8,46 +8,6 @@
 
 import Foundation
 
-class DictionaryProxy<Key: Hashable, Value> {
-  private let dictionary: Dictionary<Key, Value>
-  private let key: Key
-
-  init(_ dictionary: Dictionary<Key, Value>, _ key: Key) {
-    self.dictionary = dictionary
-    self.key = key
-  }
-
-  // MARK: Getters
-
-  var string: String? {
-    return dictionary[key] as? String
-  }
-}
-
-public extension Dictionary {
-
-  /// Returns getter proxy for `key`
-  internal subscript(key: Key) -> DictionaryProxy<Key, Value> {
-    return DictionaryProxy(self, key)
-  }
-
-  internal subscript(key: String) -> MyObj {
-    return MyObj()
-  }
-  internal func callMe() {}
-
-}
-
-struct MyObj {
-
-}
-
-public extension NSUserDefaults {
-  class A {
-
-  }
-}
-
 func to_string(object: AnyObject?) -> String? {
   return object as? String
 }
