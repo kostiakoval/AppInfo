@@ -28,11 +28,11 @@ private func int(object: AnyObject?) -> Int? {
 }
 
 private func array<T>(object: AnyObject?) -> Array<T>? {
-  return [] //return (object as? NSArray) as? Array<T>
+  return object as? Array
 }
 
 public struct AppInfo {
-  private static let bundleInfo = NSBundle.mainBundle().infoDictionary as Dictionary<String, AnyObject>
+  private static let bundleInfo = NSBundle.mainBundle().infoDictionary as! Dictionary<String, AnyObject>
 
   public static var CFBundleIdentifier: String? {
     return bundleInfo["CFBundleIdentifier"] >> string
