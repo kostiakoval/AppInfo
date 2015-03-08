@@ -52,6 +52,7 @@ The simplest way - copy `AppInfo/Classes/AppInfo.swift` to your project. That's 
 #### CocoaPods
 
 ```ruby
+use_frameworks!
 pod 'AppInfo'
 ```
 Then import it to your project:
