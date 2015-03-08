@@ -4,15 +4,19 @@ AppInfo
 
 Get information about your app in Swifty way
 
+### The Idea
+
 Do you remember yourself doing this:  
 ```objc 
 NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
 ```
 
-How many times have you searched correct names for all those InfoKeys? 
-`CFBundleDisplayName, CFBundleVersion, UIRequiredDeviceCapabilities, UIMainStoryboardFile` 
-and many other.  
-Would it Awesome to have the Xcode to show the all. And have a static type checking.
+How many times have you searched correct names for all those InfoKeys?  
+```
+"CFBundleDisplayName", "CFBundleVersion", "UIRequiredDeviceCapabilities", "UIMainStoryboardFile" 
+...
+```
+Would it Awesome to have the Xcode to show them **All**. And be staticly typed.  
 Here it is **AppInfo**!
  
 ## Usages
