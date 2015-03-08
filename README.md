@@ -1,27 +1,25 @@
 AppInfo
-=====
+=======
 
 Get information about your app in Swifty way
 
-### The Idea
+## The Idea
 
-Do you remember yourself doing this?  
-Do you remember All the keys?  
-How many times have you searched correct names?
+Do you remember yourself doing this? Can remember all the keys? How many times have you searched for the right names?
 
 ```swift
 let text = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"]
 
-//Keys
-"CFBundleDisplayName", "CFBundleVersion",
-"UIRequiredDeviceCapabilities", "UIMainStoryboardFile", ...
+// Keys
+"CFBundleDisplayName", "CFBundleVersion", "UIRequiredDeviceCapabilities", "UIMainStoryboardFile", ...
 ```
-Would it Awesome to have the Xcode to show them **All**. And be staticly typed.  
-Here it is **AppInfo**!
- 
-## Usages
+Wouldn't it be awesome to have Xcode to show them *all*? And be staticly typed!?
 
-AppInfo provides static type API for working with `infoDictionary`.
+Enter **AppInfo**.
+ 
+## Usage
+
+AppInfo provides an static typed API for working with `infoDictionary`.
 
 ```swift
 let name = AppInfo.CFBundleName 
@@ -38,17 +36,18 @@ devices - ["armv7"], Array
 /*
 ```
 
-**Benefits:**
+## Benefits
 
 - Static typed keys. No string keys anymore
-- Static typed values. Correct values for the key: Int, String, Array ...
+- Static typed values. Correct key values: Int, String, Array ...
 
+## Installation
 
-### Installation
+### Copied files
 
 The simplest way - copy `AppInfo/Classes/AppInfo.swift` to your project. That's it!
 
-#### CocoaPods
+### CocoaPods
 
 ```ruby
 use_frameworks!
@@ -61,11 +60,11 @@ import AppInfo
 
 Note: This requires CocoaPods 0.36 as well as iOS 8 
 
+## Contribute
 
-##Contribute
+Please open an issue with bugs and missing features, functionality or ideas for improvements.   
 
-Please open Issue with bugs and missing features, functionality and ideas for improvements.   
-Also you can contribute
+Also you can contribute by following this guidelines:
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
@@ -75,8 +74,7 @@ Also you can contribute
 
 ## Author
 
-Kostiantyn Koval  
-[@KostiaKoval](https://twitter.com/KostiaKoval)
+Kostiantyn Koval, [@KostiaKoval](https://twitter.com/KostiaKoval)
 
 ## License
 
