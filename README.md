@@ -6,15 +6,16 @@ Get information about your app in Swifty way
 
 ### The Idea
 
-Do you remember yourself doing this:  
-```objc 
-NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-```
+Do you remember yourself doing this?  
+Do you remember All the keys?
+How many times have you searched correct names?
 
-How many times have you searched correct names for all those InfoKeys?  
-```
-"CFBundleDisplayName", "CFBundleVersion", "UIRequiredDeviceCapabilities", "UIMainStoryboardFile" 
-...
+```swift
+let text = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"]
+
+//Keys
+"CFBundleDisplayName", "CFBundleVersion",
+"UIRequiredDeviceCapabilities", "UIMainStoryboardFile", ...
 ```
 Would it Awesome to have the Xcode to show them **All**. And be staticly typed.  
 Here it is **AppInfo**!
