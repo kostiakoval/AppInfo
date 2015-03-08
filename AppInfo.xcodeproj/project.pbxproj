@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B584C3AA1AAB0EE8002ED36F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B584C3A91AAB0EE8002ED36F /* Foundation.framework */; };
 		B58CABB71AAA55CF00BC2F8D /* AppInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B58CABB61AAA55CF00BC2F8D /* AppInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B58CABBD1AAA55D000BC2F8D /* AppInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58CABB11AAA55CF00BC2F8D /* AppInfo.framework */; };
 		B58CABC41AAA55D000BC2F8D /* AppInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CABC31AAA55D000BC2F8D /* AppInfoTests.swift */; };
@@ -25,7 +24,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B584C3A91AAB0EE8002ED36F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B58CABB11AAA55CF00BC2F8D /* AppInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58CABB51AAA55CF00BC2F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B58CABB61AAA55CF00BC2F8D /* AppInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
@@ -33,6 +31,9 @@
 		B58CABC21AAA55D000BC2F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B58CABC31AAA55D000BC2F8D /* AppInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoTests.swift; sourceTree = "<group>"; };
 		B58CABCD1AAA586E00BC2F8D /* SweftyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweftyInfo.swift; sourceTree = "<group>"; };
+		B5EBF9F31AAC29EE001B140D /* AppInfo.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AppInfo.podspec; sourceTree = "<group>"; };
+		B5EBF9F41AAC29F8001B140D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B5EBF9F51AAC29F8001B140D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B584C3AA1AAB0EE8002ED36F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +58,7 @@
 		B58CABA71AAA55CF00BC2F8D = {
 			isa = PBXGroup;
 			children = (
-				B584C3A91AAB0EE8002ED36F /* Foundation.framework */,
+				B5EBF9F21AAC29D8001B140D /* Podspec Metadata */,
 				B58CABB31AAA55CF00BC2F8D /* AppInfo */,
 				B58CABC01AAA55D000BC2F8D /* AppInfoTests */,
 				B58CABB21AAA55CF00BC2F8D /* Products */,
@@ -115,6 +115,16 @@
 				B58CABCD1AAA586E00BC2F8D /* SweftyInfo.swift */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		B5EBF9F21AAC29D8001B140D /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				B5EBF9F41AAC29F8001B140D /* LICENSE */,
+				B5EBF9F51AAC29F8001B140D /* README.md */,
+				B5EBF9F31AAC29EE001B140D /* AppInfo.podspec */,
+			);
+			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

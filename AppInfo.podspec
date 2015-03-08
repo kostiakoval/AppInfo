@@ -1,9 +1,8 @@
 Pod::Spec.new do |s|
-
   s.name         = "AppInfo"
   s.version      = "0.0.1"
-  s.summary      = "AppInfo - Get information about your app with static type safe API"
-  
+  s.summary      = "AppInfo - Swift way to get information about your app with static type safe API"
+
   s.homepage     = "https://github.com/kostiakoval/AppInfo"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Kostiantyn Koval" => "konstantin.koval1@gmail.com" }
