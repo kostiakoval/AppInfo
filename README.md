@@ -28,12 +28,14 @@ AppInfo provides static type API for working with `infoDictionary`.
 let name = AppInfo.CFBundleName 
 let build = AppInfo.CFBundleVersion
 let version = AppInfo.CFBundleShortVersionString
+let devices = AppInfo.UIDeviceFamily
 
 /*
 Results:
-Name - "DemeApp" 
-build - 2
-version - "1.0"
+Name - "DemeApp", String
+build - 2, Int
+version - "1.0", String
+devices - ["armv7"], Array
 /*
 ```
 
