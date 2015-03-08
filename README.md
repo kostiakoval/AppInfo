@@ -7,7 +7,7 @@ Get information about your app in Swifty way
 ### The Idea
 
 Do you remember yourself doing this?  
-Do you remember All the keys?
+Do you remember All the keys?  
 How many times have you searched correct names?
 
 ```swift
