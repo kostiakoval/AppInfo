@@ -45,6 +45,23 @@ devices - ["armv7"], Array
 - Static typed values. Correct values for the key: Int, String, Array ...
 
 
+### Installation
+
+The simplest way - copy `AppInfo/Classes/AppInfo.swift` to your project. That's it!
+
+#### CocoaPods
+
+```ruby
+pod 'AppInfo'
+```
+Then import it to your project:
+```swift
+import AppInfo
+```
+
+Note: This requires CocoaPods 0.36 as well as iOS 8 
+
+
 ##Contribute
 
 Please open Issue with bugs and missing features, functionality and ideas for improvements.   
