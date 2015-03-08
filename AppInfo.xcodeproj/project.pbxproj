@@ -10,7 +10,7 @@
 		B58CABB71AAA55CF00BC2F8D /* AppInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B58CABB61AAA55CF00BC2F8D /* AppInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B58CABBD1AAA55D000BC2F8D /* AppInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58CABB11AAA55CF00BC2F8D /* AppInfo.framework */; };
 		B58CABC41AAA55D000BC2F8D /* AppInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CABC31AAA55D000BC2F8D /* AppInfoTests.swift */; };
-		B58CABCE1AAA586E00BC2F8D /* SweftyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CABCD1AAA586E00BC2F8D /* SweftyInfo.swift */; };
+		B5EDEE5E1AAC2C910057D5B2 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDEE5D1AAC2C910057D5B2 /* AppInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,10 +30,10 @@
 		B58CABBC1AAA55D000BC2F8D /* AppInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58CABC21AAA55D000BC2F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B58CABC31AAA55D000BC2F8D /* AppInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoTests.swift; sourceTree = "<group>"; };
-		B58CABCD1AAA586E00BC2F8D /* SweftyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweftyInfo.swift; sourceTree = "<group>"; };
 		B5EBF9F31AAC29EE001B140D /* AppInfo.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AppInfo.podspec; sourceTree = "<group>"; };
 		B5EBF9F41AAC29F8001B140D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B5EBF9F51AAC29F8001B140D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B5EDEE5D1AAC2C910057D5B2 /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppInfo.swift; path = Classes/AppInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 		B58CABCF1AAA587B00BC2F8D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B58CABCD1AAA586E00BC2F8D /* SweftyInfo.swift */,
+				B5EDEE5D1AAC2C910057D5B2 /* AppInfo.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B58CABCE1AAA586E00BC2F8D /* SweftyInfo.swift in Sources */,
+				B5EDEE5E1AAC2C910057D5B2 /* AppInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

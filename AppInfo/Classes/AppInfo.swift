@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  AppInformer
+//  AppInfo.swift
+//  AppInfo
 //
 //  Created by Konstantin Koval on 06/03/15.
 //  Copyright (c) 2015 Kostiantyn Koval. All rights reserved.
@@ -28,11 +28,11 @@ private func int(object: AnyObject?) -> Int? {
 }
 
 private func array<T>(object: AnyObject?) -> Array<T>? {
-  return object as? Array
+  return [] //return (object as? NSArray) as? Array<T>
 }
 
 public struct AppInfo {
-  private static let bundleInfo = NSBundle.mainBundle().infoDictionary as! Dictionary<String, AnyObject>
+  private static let bundleInfo = NSBundle.mainBundle().infoDictionary as Dictionary<String, AnyObject>
 
   public static var CFBundleIdentifier: String? {
     return bundleInfo["CFBundleIdentifier"] >> string

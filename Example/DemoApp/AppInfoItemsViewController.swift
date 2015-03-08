@@ -29,7 +29,7 @@ class AppInfoItemsViewController: UITableViewController {
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-    let cell = tableView.dequeueReusableCellWithIdentifier("AppInfoItemCell", forIndexPath: indexPath) as!  UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("AppInfoItemCell", forIndexPath: indexPath) as  UITableViewCell
 
     let item = items[indexPath.row]
     cell.textLabel?.text = item.name
