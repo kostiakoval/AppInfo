@@ -1,0 +1,14 @@
+PODS:
+  - AppInfo (0.0.1)
+
+DEPENDENCIES:
+  - AppInfo (from `../`)
+
+EXTERNAL SOURCES:
+  AppInfo:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AppInfo: f2c1b5352bff71c963e6968e3af49f0a4bf96d07
+
+COCOAPODS: 0.36.0.rc.1
